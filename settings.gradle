@@ -1,0 +1,5 @@
+rootProject.name='jccfe'
+include 'jccfe-common',
+	'jccfe-c',
+	'jccfe-cplusplus',
+	'jccfe-objc'

@@ -1,0 +1,41 @@
+ext.githubProjectName = rootProject.name
+
+buildscript {
+	apply from: file('gradle/buildscript.gradle'), to: buildscript
+}
+
+apply from: file('gradle/convention.gradle')
+apply from: file('gradle/github.gradle')
+apply from: file('gradle/nexus.gradle')
+apply from: file('gradle/check.gradle')
+apply from: file('gradle/license.gradle')
+
+subprojects {
+	group = "org.anarres.jccfe"
+}
+
+project(':jccfe-common') {
+	dependencies {
+		compile 'com.google.guava:guava:18.0'
+		compile 'org.anarres:jcpp:1.4.7'
+	}
+}
+
+project(':jccfe-c') {
+	dependencies {
+		compile project(':jccfe-common')
+	}
+}
+
+project(':jccfe-cplusplus') {
+	dependencies {
+		compile project(':jccfe-common')
+	}
+}
+
+project(':jccfe-objc') {
+	dependencies {
+		compile project(':jccfe-common')
+	}
+}
+
