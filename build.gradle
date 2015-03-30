@@ -15,8 +15,11 @@ subprojects {
 }
 
 project(':jccfe-common') {
+	apply plugin: 'sablecc'
+
 	dependencies {
 		compile 'com.google.guava:guava:18.0'
+		// compile 'org.codehaus.mojo:animal-sniffer-annotations:1.14'
 		compile 'org.anarres:jcpp:1.4.7'
 	}
 }

@@ -15,7 +15,7 @@ subprojects {
 		// Closure to configure all the POM with extra info, common to all projects
 		project {
 			name "${project.name}"
-			description "A C compiler frontend in pure Java."
+			description "A C, C++ and ObjC compiler frontend in pure Java."
 			developers {
 				developer {
 					id 'shevek'
