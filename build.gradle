@@ -1,17 +1,28 @@
-ext.githubProjectName = rootProject.name
-
 buildscript {
 	apply from: file('gradle/buildscript.gradle'), to: buildscript
+	dependencies {
+		classpath 'org.anarres.gradle:gradle-sablecc-plugin:1.0.4'
+	}
 }
 
-apply from: file('gradle/convention.gradle')
-apply from: file('gradle/github.gradle')
-apply from: file('gradle/nexus.gradle')
-apply from: file('gradle/check.gradle')
-apply from: file('gradle/license.gradle')
+apply plugin: 'org.anarres.stdproject'
+stdproject {
+}
 
 subprojects {
 	group = "org.anarres.jccfe"
+
+	apply plugin: 'org.anarres.stdmodule'
+	stdmodule {
+		description "A C, C++ and ObjC compiler frontend in pure Java."
+		author id: 'shevek', name: 'Shevek', email: 'github@anarres.org'
+		license 'Apache-2.0'
+	}
+
+	sourceCompatibility = 1.7
+	animalsniffer {
+		signature = "org.codehaus.mojo.signature:java17:+@signature"
+	}
 }
 
 project(':jccfe-common') {
