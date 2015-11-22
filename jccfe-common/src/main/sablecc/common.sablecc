@@ -163,7 +163,7 @@ Tokens
 	tok_xor_eq     = '^=';
 	tok_dot_eq     = '.=';
 	tok_rshift_eq  = '>>=';
-	tok_urshift_eq = '>>=';
+	tok_urshift_eq = '>>>=';
 	tok_lshift_eq  = '<<=';
 
 	tok_eq    = '=';
@@ -180,7 +180,7 @@ Tokens
 	tok_dec   = '--';
 
 	tok_rshift  = '>>';
-	tok_urshift = '>>';
+	tok_urshift = '>>>';
 	tok_lshift  = '<<';
 
 	tok_coloncolon = '::';
